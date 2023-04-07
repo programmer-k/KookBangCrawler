@@ -9,7 +9,7 @@ from selenium.common.exceptions import TimeoutException
 # Constants
 search_keywords = ("과학화", "최첨단", "4차", "빅데이터", "인공지능")
 directory = "data/"
-page_to_crawl = 13
+page_to_crawl = 1
 
 
 for search_keyword in search_keywords:
@@ -78,6 +78,7 @@ for search_keyword in search_keywords:
     except TimeoutException:
         # The server detects crawling.
         # Move to next keyword.
-        pass
+        driver.close()
+        driver.switch_to.window(driver.window_handles[0])
 
     driver.close()
