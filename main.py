@@ -8,8 +8,8 @@ from selenium.common.exceptions import TimeoutException
 
 # Constants
 # "드론", "마일즈", "VR", "신기술", "최첨단", "최신", "과학과", "장비",  "모빌리티", "차세대", "K9", "andlsgkdrhdrl",  "항공기", "헬기", "황력", "급속 헬기"
-search_keywords = ("K15")
-directory = "data/"
+search_keywords = ("KGSR",)
+directory = "my_data/"
 page_to_crawl = 10
 
 
@@ -40,8 +40,8 @@ for search_keyword in search_keywords:
     elem.click()
 
     # Click 육군 section
-    elem = driver.find_element(By.CSS_SELECTOR, "#container > div.full_search_box > div > div.menu_search > div > div > div:nth-child(3) > a")
-    elem.click()
+    #elem = driver.find_element(By.CSS_SELECTOR, "#container > div.full_search_box > div > div.menu_search > div > div > div:nth-child(3) > a")
+    #elem.click()
 
     try:
         for i in range(page_to_crawl):
